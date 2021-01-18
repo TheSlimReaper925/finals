@@ -38,12 +38,12 @@ class AdminController extends Controller
     	]);
 
         $id = $store["id"];  
-
-        CategoryProducts::create([
-            "product_id"=>$id,
-            "category_id"=>$request->input('category')
-        ]); 
-
+        if($request->input('category') != null){
+            CategoryProducts::create([
+                "product_id"=>$id,
+                "category_id"=>$request->input('category')
+            ]); 
+        }
         return redirect()->route("allproducts");
 
     }

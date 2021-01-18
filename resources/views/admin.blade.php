@@ -48,7 +48,6 @@
   </div>
   <div class="mb-3">
     <select name="category" class="form-select" aria-label="Default select example">
-      <option selected>category</option>
       @foreach($category as $cat)
       <option  value="{!! $cat->id !!}">{!! $cat->category !!}</option>
       @endforeach
